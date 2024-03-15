@@ -15,3 +15,5 @@ To run the application, you need to set the following environment variables:
 EMAIL_HOST_USER: Email address for sending verification emails.
 EMAIL_HOST_PASSWORD: Password for the email account.
 You can set these variables in your environment or use a .env file in the project root directory.
+
+<img src="scrnli_3_14_2024_5-14-44 PM.png">
