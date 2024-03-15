@@ -15,3 +15,6 @@ To run the application, you need to set the following environment variables:
 EMAIL_HOST_USER: Email address for sending verification emails.
 EMAIL_HOST_PASSWORD: Password for the email account.
 You can set these variables in your environment or use a .env file in the project root directory.
+
+
+https://github.com/Klassiq-kay247/OIBSIP-task_no4
