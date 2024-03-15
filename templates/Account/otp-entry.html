@@ -1,0 +1,25 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+  <div class="otp-entry-container">
+    <h2 class="otp-entry-title">Enter OTP for Password Reset</h2>
+
+    <form class="otp-entry-form" method="post">
+      {% csrf_token %}
+      <label class="otp-entry-label" for="otp">Enter OTP:</label>
+      <input class="otp-entry-input" type="text" id="otp" name="otp" required>
+      
+      <button class="otp-entry-button" type="submit">Submit OTP</button>
+    </form>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endblock %}
+
+

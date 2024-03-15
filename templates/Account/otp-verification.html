@@ -1,0 +1,91 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+  <div class="verification-container">
+    <h2 class="verification-title">OTP Verification</h2>
+    <p class="verification-text">Please enter the OTP sent to your email to verify your account.</p>
+
+    <form class="verification-form" method="post">
+      {% csrf_token %}
+      <label class="verification-label" for="entered_otp">Enter OTP:</label>
+      <input class="verification-input" type="text" id="entered_otp" name="entered_otp" required>
+      <button class="verification-button" type="submit">Verify</button>
+    </form>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  <style>
+	.verification-container {
+	  width: 80%;
+	  max-width: 400px;
+	  margin: 0 auto;
+	  padding: 20px;
+	  background-color: #f5f5f5;
+	  border-radius: 5px;
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+  
+	.verification-title {
+	  font-size: 24px;
+	  margin-bottom: 10px;
+	}
+  
+	.verification-text {
+	  font-size: 16px;
+	  margin-bottom: 20px;
+	}
+  
+	.verification-form {
+	  display: flex;
+	  flex-direction: column;
+	}
+  
+	.verification-label {
+	  font-size: 14px;
+	  margin-bottom: 5px;
+	}
+  
+	.verification-input {
+	  padding: 10px;
+	  border: 1px solid #ccc;
+	  border-radius: 3px;
+	  margin-bottom: 10px;
+	}
+  
+	.verification-button {
+	  background-color: #007bff;
+	  color: #fff;
+	  border: none;
+	  padding: 10px 15px;
+	  border-radius: 3px;
+	  cursor: pointer;
+	}
+  
+	.verification-button:hover {
+	  background-color: #0056b3;
+	}
+  
+	.messages {
+	  margin-top: 15px;
+	  list-style: none;
+	}
+  
+	.messages li {
+	  margin-bottom: 5px;
+	  color: #d9534f;
+	}
+  
+	.messages li.success {
+	  color: #5cb85c;
+	}
+  </style>
+
+
+{% endblock %}

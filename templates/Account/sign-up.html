@@ -1,0 +1,116 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- ... Your other HTML code ... -->
+
+<!-- log in section start -->
+<section class="log-in-section section-b-space">
+    <div class="container-fluid-lg w-100">
+        <div class="row">
+            <div class="col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto">
+                <div class="image-contain">
+                    <img src="{% static '/assets/images/inner-page/sign-up.png' %}" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
+                <div class="log-in-box">
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{form.errors}}</strong>
+                    </div>
+                    {% endif %}
+                    <div class="log-in-title">
+                        <h3>Welcome To Fastkart</h3>
+                        <h4>Create New Account</h4>
+                    </div>
+
+                    <div class="input-box">
+                        <form class="row g-3" method="post">
+                            {% csrf_token %}
+                            {% csrf_token %}
+                            {{ form.as_p }}
+
+
+                            <div class="col-12">
+                                <div class="forgot-box">
+                                    <div class="form-check ps-0 m-0 remember-box">
+                                        <input class="checkbox_animated check-box" type="checkbox"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">I agree with
+                                            <span>Terms</span> and <span>Privacy</span></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-animation w-100" type="submit">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="other-log-in">
+                        <h6>or</h6>
+                    </div>
+
+
+
+                    <div class="other-log-in">
+                        <h6></h6>
+                    </div>
+
+                    <div class="sign-up-box">
+                        <h4>Already have an account?</h4>
+                        <a href="{% url 'Account:login-in' %}">Log In</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xxl-7 col-xl-6 col-lg-6"></div>
+        </div>
+    </div>
+</section>
+<!-- log in section end -->
+
+<!-- ... Your other HTML code ... -->
+
+<!-- Add custom CSS styles directly in the template -->
+<style>
+    /* Custom styles for the sign-up form */
+    .input-box input[type="text"],
+    .input-box input[type="email"],
+    .input-box input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    /* Increase the width of the "Sign Up" button */
+    .log-in-box .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    /* Center the sign-up box */
+    .log-in-box {
+        text-align: center;
+    }
+
+    /* Add some margin between form fields */
+    .input-box .form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Add margin to the "Already have an account?" link */
+    .sign-up-box {
+        margin-top: 15px;
+    }
+</style>
+
+{% endblock content %}
