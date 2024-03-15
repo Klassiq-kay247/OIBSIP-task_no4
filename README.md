@@ -17,3 +17,8 @@ EMAIL_HOST_PASSWORD: Password for the email account.
 You can set these variables in your environment or use a .env file in the project root directory.
 
 <img src="scrnli_3_14_2024_5-14-44 PM.png">
+<img src="scrnli_3_14_2024_5-18-19 PM.png">
+<img src="scrnli_3_14_2024_5-19-20 PM.png">
+<img src="scrnli_3_14_2024_5-19-34 PM.png">
+
+
